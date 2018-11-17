@@ -1,0 +1,14 @@
+<!-- <input type="text" [(ngModel)] = 'SearchText'> -->
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>content</th>
+  </tr>
+  {{res}}
+  <tr *ngFor="let data of result">
+    <td><a [routerLink] = "[data.id]">{{data.id}}</a></td>
+    <td>
+      {{data.title}}
+    </td>
+  </tr>
+</table>

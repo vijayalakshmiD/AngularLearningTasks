@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/redit">View</a>
+    <a routerLink="/login">Login</a>
+    <a routerLink="/register">Register</a>
+    <a routerLink="/parent">ParentComponent</a>
+    <!-- <a routerLink="/child">ChildComponent</a> -->
+  </nav>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <!--   <form #newform = "ngForm" ngSubmit="onClick()">
+    <div class="form-group">
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" #spy ="ngModel" required>
+      {{spy.valid}}{{spy.invalid}}
+      <div [hidden]="spy.valid" class="alert alert-danger"></div>
+    </div>
+    {{newform.form.error}}
+<button type="submit" class="btn btn-danger" [disabled]="newform.form.invalid">Submit</button>
+  </form> -->
+
+ <p>{{result}}</p>
+ <router-outlet (activate)="onRouterOutletActivate($event)"></router-outlet>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <table border="1">
+        <tr>
+          <th>
+            ID
+          </th>
+          <th>
+            Title
+          </th>
+          <th>
+            UserId
+          </th>
+          <th>
+            Body
+          </th>
+        </tr>
+        <tr *ngIf='idsview'>
+          <td>{{idsview.id}}</td>
+          <td>{{idsview.title}}</td>
+          <td>{{idsview.userId}}</td>
+          <td>{{idsview.body}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<p>
+    <button class='btn btn-default' (click)="onBack()">Back </button>
+</p>

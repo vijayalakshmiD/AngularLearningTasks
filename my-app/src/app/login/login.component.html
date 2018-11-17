@@ -1,0 +1,28 @@
+ <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 offset-md-3">
+                  <h3>Angular 6 Template-Driven Form Validation</h3>
+                  <form #f="ngForm" (ngSubmit)="onSubmit(f)"  novalidate>
+                      <div class="form-group">
+                          <label for="firstName">First Name</label>
+                          <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" #FirstName="ngModel" required />
+                          <div *ngIf="f.submitted && FirstName.invalid" class="invalid-feedback">
+                              <div *ngIf="FirstName.errors.required">First Name is required</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="lastName">Last Name</label>
+                          <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" #LastName="ngModel"  required />
+                          <div *ngIf="f.submitted && LastName.invalid" class="invalid-feedback">
+                              <div *ngIf="LastName.errors.required">Last Name is required</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <button class="btn btn-primary">Register</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
