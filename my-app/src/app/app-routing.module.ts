@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { NewsComponent } from './news/news.component';
+
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path:  'redit/:id', component: ProductdetailComponent },
   { path : 'parent', component : ParentComponent },
   { path : 'child', component : ChildComponent },
+  { path : 'news', component : NewsComponent }
+
 
 ];
 

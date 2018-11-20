@@ -1,0 +1,40 @@
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div style="text-align:left">
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Head Lines</button>
+            <div class="dropdown-content">
+              <div *ngFor="let newsname of newsnames"> 
+                <a  (click)="getids(newsname)" #name>{{newsname.name}}</a>
+              </div>
+            </div>
+          </div>
+    </nav>
+    <div class="container"> 
+        <div class="row">
+          <table>
+            <tr class="boder-style" *ngFor="let article of responses" (deferLoad)="article.show = true">
+            <td>
+                <div><h5>{{article['source'].name}}</h5><br><img src="{{article.urlToImage}}"/></div>
+            </td>
+            <td>       
+                <div><h5>{{article.title}}</h5><br>
+                  <p>{{article.description}}</p><br>
+                  <i class="fa fa-eye"></i><a href="{{article.url}}"> More</a>
+                  <p>{{ article.publishedAt |  timeAgo }}</p>
+                </div>
+            </td>
+            </tr>
+          </table>
+          
+          
+        </div>
+      </div>
+
+<!-- <div class="container">
+  <div class="row" *ngFor="let response of responses">
+    <div class="col-md-3"><img src="{{response.urlToImage}}"/></div>
+    <div class="col-md-3"><h5>{{response.title}}</h5><br>
+    <p>{{response.description}}</p></div>
+  </div>
+</div> -->

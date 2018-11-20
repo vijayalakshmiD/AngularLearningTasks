@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RedditComponent } from './reddit/reddit.component';
 import { RedditService } from './reddit.service';
+import { NewsService } from './news/news.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { map,filter } from "rxjs/operators";
@@ -20,7 +21,8 @@ import { ChildComponent } from './child/child.component';
 import { FilterPipe } from './filter.pipe';
 import { ParentlocalComponent } from './parentlocal/parentlocal.component';
 import { ChildlocalComponent } from './childlocal/childlocal.component';
-
+import { NewsComponent } from './news/news.component';
+import { TimeAgoPipe } from 'time-ago-pipe';
 
 
 
@@ -36,7 +38,9 @@ import { ChildlocalComponent } from './childlocal/childlocal.component';
     ChildComponent,
     FilterPipe,
     ParentlocalComponent,
-    ChildlocalComponent
+    ChildlocalComponent,
+    NewsComponent,
+    TimeAgoPipe
     
   ],
   imports: [
@@ -44,9 +48,10 @@ import { ChildlocalComponent } from './childlocal/childlocal.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DeferLoadModule
   ],
-  providers: [RedditService],
+  providers: [RedditService, NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
